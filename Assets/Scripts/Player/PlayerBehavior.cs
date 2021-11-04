@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    float acceleration = 5f;
+
+    [SerializeField]
+    Vector2 bounds = new Vector2(10f, 15f);
+
+    void FixedUpdate()
     {
-        
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        //? Transform player position according to input
+        this.transform.position = new Vector3(
+            horizontalInput * acceleration * Time.deltaTime + this.transform.position.x,
+            verticalInput * acceleration * Time.deltaTime + this.transform.position.y,
+            this.transform.position.z);
+
+        //? Limit playerPawn to boundaries 
+        this.transform.position = new Vector3(
+            Mathf.Clamp(this.transform.position.x, -this.bounds.x, this.bounds.x),
+            Mathf.Clamp(this.transform.position.y, -this.bounds.y, this.bounds.y),
+            this.transform.position.z);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //? Bounds debug gizmo
+    void OnDrawGizmos() {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(this.bounds.x * 2, this.bounds.y * 2, 1));
     }
 }
