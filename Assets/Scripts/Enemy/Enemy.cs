@@ -7,29 +7,22 @@ public class Enemy : MonoBehaviour
 
     public int attackDamage;
 
-    //move
+
     private float latestDirectionChangeTime;
-    private readonly float directionChangeTime = 3f;
-    private float moveSpeed = 2f;
+    [SerializeField] private float directionChangeTime;
+
+    [SerializeField] private float moveSpeed;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
 
     [SerializeField] GameObject bullet;
-    float fireRate;
+    [SerializeField] float fireRate;
     float nextFire;
 
     void Start()
     {
         latestDirectionChangeTime = 0f;
-        calcuateNewMovementVector();
-        fireRate = 1f;
         nextFire = Time.time;
-    }
-
-    void calcuateNewMovementVector()
-    {
-        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
-        movementPerSecond = movementDirection * moveSpeed;
     }
 
     void Update()
@@ -43,10 +36,14 @@ public class Enemy : MonoBehaviour
             latestDirectionChangeTime = Time.time;
             calcuateNewMovementVector();
         }
+        Move();
 
-        transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
-        transform.position.y + (movementPerSecond.y * Time.deltaTime));
+    }
 
+    void calcuateNewMovementVector()
+    {
+        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+        movementPerSecond = movementDirection * moveSpeed;
     }
 
     void Fire()
@@ -62,11 +59,12 @@ public class Enemy : MonoBehaviour
             Fire();
         }
     }
-    /*
-        private void OnTriggerEnter(Collider other)
-        {
-            Debug.Log(other.gameObject.name);
-            Destroy(this.gameObject);
-        }
-        */
+
+    void Move()
+    {
+        transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
+        transform.position.y + (movementPerSecond.y * Time.deltaTime));
+    }
+
+
 }

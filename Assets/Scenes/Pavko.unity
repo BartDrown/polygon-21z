@@ -240,7 +240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 2
+  directionChangeTime: 2
+  moveSpeed: 2
   bullet: {fileID: 1412816247118496137, guid: ddca4729899c6874081861e2106f601f, type: 3}
+  fireRate: 2
 --- !u!135 &1703476281
 SphereCollider:
   m_ObjectHideFlags: 0
