@@ -5,12 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public int attackDamage;
-
-
-    private float latestDirectionChangeTime;
+    private float latestDirectionChangeTime = 0f;
+    //time to change direction
     [SerializeField] private float directionChangeTime;
-
     [SerializeField] private float moveSpeed;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
@@ -21,7 +18,6 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        latestDirectionChangeTime = 0f;
         nextFire = Time.time;
     }
 
@@ -37,13 +33,6 @@ public class Enemy : MonoBehaviour
             calcuateNewMovementVector();
         }
         Move();
-
-    }
-
-    void calcuateNewMovementVector()
-    {
-        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
-        movementPerSecond = movementDirection * moveSpeed;
     }
 
     void Fire()
@@ -58,6 +47,12 @@ public class Enemy : MonoBehaviour
         {
             Fire();
         }
+    }
+
+    void calcuateNewMovementVector()
+    {
+        movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+        movementPerSecond = movementDirection * moveSpeed;
     }
 
     void Move()
