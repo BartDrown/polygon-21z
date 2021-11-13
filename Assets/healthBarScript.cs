@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Allows us to create a variable that holds our slider
 
-public class healthBarScript : MonoBehaviour
+public class HealthBarScript : MonoBehaviour
 {
     public Slider slider;
 

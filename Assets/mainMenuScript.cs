@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // In order to change scenes in unity we need this
 
-public class mainMenuScript : MonoBehaviour
+public class MainMenuScript : MonoBehaviour
 {
     public void playGame() // public so that we can call it from button
     {
