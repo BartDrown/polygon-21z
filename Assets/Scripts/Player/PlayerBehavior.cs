@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*  READ ME
+ *  If we want to in the future write code that "flips the player" use transform.Rotate(0f, 180f, 0f) (x, y, z)
+ *  This way point from which he shoots will also flip and they player will not shoot himself
+ *  After writing check if FirePoint does flip
+ */
+
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField]
