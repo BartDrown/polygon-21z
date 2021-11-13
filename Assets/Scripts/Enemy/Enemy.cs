@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    [SerializeField] private int health = 100;
     private float latestDirectionChangeTime = 0f;
     //time to change direction
     [SerializeField] private float directionChangeTime;
@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Vector2 movementPerSecond;
 
     [SerializeField] GameObject bullet;
+    // [SerializeField] GameObject deathEffect; uncomment and add in unity once we have deathEffect
     [SerializeField] float fireRate;
     float nextFire;
 
@@ -59,6 +60,22 @@ public class Enemy : MonoBehaviour
     {
         transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
         transform.position.y + (movementPerSecond.y * Time.deltaTime));
+    }
+
+    public void takeDamage(int damage) // public because accessible by BulletScript.cs OnTriggerEnter2D()
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            die();
+        }
+    }
+
+    void die()
+    {
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        // uncomment and add in unity once we have deathEffect
+        Destroy(gameObject);
     }
 
 
