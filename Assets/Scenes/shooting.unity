@@ -142,6 +142,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1059605349}
   bullet: {fileID: 4704827633829241443, guid: bed7e4dcc0329bb4685b120ce4e0a5c3, type: 3}
+--- !u!114 &14069790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14069782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfc6d101a7b8404cb151741370895de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab1: {fileID: 4704827633829241443, guid: bed7e4dcc0329bb4685b120ce4e0a5c3, type: 3}
+  bulletPrefab2: {fileID: 4704827633829241443, guid: 879fef3b1d5fbf5419fe2c8348c73937, type: 3}
 --- !u!1 &612277066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8396229768473362769, guid: 1184774f49a37f7448ccc42a145aa8f8, type: 3}

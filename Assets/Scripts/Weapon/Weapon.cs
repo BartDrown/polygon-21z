@@ -22,4 +22,9 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(bullet, FirePoint.position, FirePoint.rotation);
     }
+
+    public void setBulletType(GameObject newBullet)
+    {
+        bullet = newBullet;
+    }
 }
