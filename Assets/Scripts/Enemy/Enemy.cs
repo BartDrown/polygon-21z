@@ -5,48 +5,73 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+    // move variaable
     private float latestDirectionChangeTime = 0f;
-    //time to change direction
-    [SerializeField] private float directionChangeTime;
-    [SerializeField] private float moveSpeed;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+    [Header("Movement")]
+    [SerializeField] private float directionChangeTime; //time to change direction
+    [SerializeField] private float moveSpeed;
 
+
+    // shoot variaable
+    [Header("Shooting")]
     [SerializeField] GameObject bullet;
-    [SerializeField] float fireRate;
-    float nextFire;
+    public float startTimeBtwShots;
+    public float currentShoot, maxShoot, reloadTime;
+
+    private float timeBtwShots;
+    private bool isReloading = false;
 
     void Start()
     {
-        nextFire = Time.time;
+        timeBtwShots = startTimeBtwShots;
+        currentShoot = maxShoot;
     }
 
     void Update()
     {
-
-        CheckIfTimeToFire();
-
         //if the changeTime was reached, calculate a new movement vector
         if (Time.time - latestDirectionChangeTime > directionChangeTime)
         {
             latestDirectionChangeTime = Time.time;
             calcuateNewMovementVector();
         }
+
+        if (currentShoot <= 0)
+        {
+            StartCoroutine(Reload());
+        }
+
+        if (!isReloading)
+        {
+            Fire();
+        }
+
         Move();
     }
 
     void Fire()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
-        nextFire = Time.time + fireRate;
+
+        if (timeBtwShots <= 0)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            currentShoot--;
+            timeBtwShots = startTimeBtwShots;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
     }
 
-    void CheckIfTimeToFire()
+    IEnumerator Reload()
     {
-        if (Time.time > nextFire)
-        {
-            Fire();
-        }
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        currentShoot = maxShoot;
+        isReloading = false;
     }
 
     void calcuateNewMovementVector()
