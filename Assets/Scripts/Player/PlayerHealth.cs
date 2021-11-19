@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100; // Nie daje const bo nie wiem czy nie bêdziemy max healtha zmieniaæ
-    public int currentHealth;
+    [SerializeField] private int maxHealth = 100; // Nie daje const bo nie wiem czy nie bêdziemy max healtha zmieniaæ
+    [SerializeField] private int currentHealth;
 
-    public healthBarScript healthBar;
+    [SerializeField] private HealthBarScript healthBar;
 
     void setPlayerHealthToValue(int valueToBeSet)
     {
