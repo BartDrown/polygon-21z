@@ -56,6 +56,8 @@ public class PlayerHealth : MonoBehaviour
         // Instantiate(deathEffect, transform.position, Quaternion.identity);
         // uncomment and add in unity once we have deathEffect
         Destroy(gameObject);
+        FindObjectOfType<GameManager>().EndGame();
+
     }
 
 
