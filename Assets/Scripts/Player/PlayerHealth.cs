@@ -33,20 +33,29 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         DEBUG_removeHpOnSpace(20);
+       // Debug.Log(currentHealth);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (currentHealth - damage < 0)
         {
             currentHealth = 0;
             healthBar.setValue(currentHealth);
+            die();
         }
         else
         {
             currentHealth -= damage;
             healthBar.setValue(currentHealth);
         }
+    }
+
+    void die()
+    {
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        // uncomment and add in unity once we have deathEffect
+        Destroy(gameObject);
     }
 
 

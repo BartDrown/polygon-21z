@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8080800653689810127}
   - component: {fileID: 8722912187135336787}
   - component: {fileID: 5186284042600540031}
-  - component: {fileID: 5111367467130757654}
+  - component: {fileID: -7024392494150990936}
   - component: {fileID: 7381020103512136472}
   m_Layer: 0
   m_Name: bulletTwo
@@ -107,8 +107,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &5111367467130757654
-CircleCollider2D:
+--- !u!61 &-7024392494150990936
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,8 +121,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65625, y: 0.21875}
+    newSize: {x: 0.15625, y: 0.09375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.078125
+  m_Size: {x: 0.65625, y: 0.21875}
+  m_EdgeRadius: 0
 --- !u!114 &7381020103512136472
 MonoBehaviour:
   m_ObjectHideFlags: 0

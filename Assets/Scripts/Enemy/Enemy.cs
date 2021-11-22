@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private Transform FirePoint;
     [SerializeField] private int health = 100;
     private float latestDirectionChangeTime = 0f;
     //time to change direction
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        Instantiate(bullet, FirePoint.position, FirePoint.rotation);
         nextFire = Time.time + fireRate;
     }
 
