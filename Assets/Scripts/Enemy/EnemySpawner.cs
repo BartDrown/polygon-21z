@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Vector2 spanwValues;
+    public Vector2 spawnValues;
     public GameObject enemies;
 
     public float spawnWait, spawnMostWait, spawnLeastWait;
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
         while (!stop)
         {
-            Vector2 spawnPosition = new Vector2(Random.Range(spanwValues.x, spanwValues.x + 5), Random.Range(spanwValues.y, spanwValues.y + 8));
+            Vector2 spawnPosition = new Vector2(Random.Range(spawnValues.x, spawnValues.x + 5), Random.Range(spawnValues.y, spawnValues.y + 8));
             Instantiate(enemies, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(spawnWait);
         }
