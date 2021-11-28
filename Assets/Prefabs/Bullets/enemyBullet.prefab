@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8722912187135336787}
   - component: {fileID: 5186284042600540031}
   - component: {fileID: -6574260481583177231}
-  - component: {fileID: 7381020103512136472}
+  - component: {fileID: 1859969571881841699}
   m_Layer: 0
-  m_Name: bulletOne
+  m_Name: enemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15625, y: 0.09375}
   m_EdgeRadius: 0
---- !u!114 &7381020103512136472
+--- !u!114 &1859969571881841699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4704827633829241443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c02c6b1a014b144d854dfe9b102f798, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f67321af1c592b49b98dbeecc3d495f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 25
+  speed: 5
+  damage: 50
   rigidBody: {fileID: 5186284042600540031}

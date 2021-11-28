@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8396229768473362781}
   - component: {fileID: 8396229768473362780}
   - component: {fileID: 8396229768473362782}
+  - component: {fileID: 612277067}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -95,7 +96,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce47dc83a0f1a2d44a3cdbdbe6086d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   directionChangeTime: 2
   moveSpeed: 2
   bullet: {fileID: 1412816247118496137, guid: ddca4729899c6874081861e2106f601f, type: 3}
   fireRate: 2
+--- !u!58 &612277067
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396229768473362769}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
