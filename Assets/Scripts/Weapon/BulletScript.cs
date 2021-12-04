@@ -11,6 +11,9 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         rigidBody.velocity = transform.right * speed; // move rigid body to the right with our speed
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo) 
@@ -22,11 +25,12 @@ public class BulletScript : MonoBehaviour
         if (enemy != null)
         {
             enemy.takeDamage(damage);
+            Destroy(gameObject); // Destroy our bullet
         }
 
         // Instantiate(impactEffect, transform.position, transform.rotation);
         // uncomment and add in unity once we have impactAnimation
-        Destroy(gameObject); // Destroy our bullet
+
     }
 
 }
