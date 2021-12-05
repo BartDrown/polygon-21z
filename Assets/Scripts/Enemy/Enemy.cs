@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     // [SerializeField] GameObject deathEffect; uncomment and add in unity once we have deathEffect
     [SerializeField] float fireRate;
     float nextFire;
+    [SerializeField]
+    Vector2 bounds = new Vector2(10f, 15f);
 
     void Start()
     {
@@ -35,6 +37,12 @@ public class Enemy : MonoBehaviour
             calcuateNewMovementVector();
         }
         Move();
+
+        //? Limit playerPawn to boundaries 
+        this.transform.position = new Vector3(
+            Mathf.Clamp(this.transform.position.x, -this.bounds.x, this.bounds.x),
+            Mathf.Clamp(this.transform.position.y, -this.bounds.y, this.bounds.y),
+            this.transform.position.z);
     }
 
     void Fire()
