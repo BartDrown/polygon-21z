@@ -35,10 +35,6 @@ public class Weapon : MonoBehaviour
     private bool canShoot(){
         float shootInterval = this.bullet.GetComponent<BulletScript>().getShootInterval();
 
-        Debug.Log(this.lastTimeShot);
-        Debug.Log(Time.time);
-        Debug.Log(shootInterval);
-
         if(this.lastTimeShot < Time.time - shootInterval ){
             this.lastTimeShot = Time.time;
             return true;

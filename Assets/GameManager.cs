@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = false;
     float restartDelay = 5f; // How long do we wait before restarting scene, 1 second by default
 
+    private int killCount;
+
+    [SerializeField]
+    private KillCounter killCounter;
+
     public void EndGame()
     {
         if(!gameHasEnded)
@@ -18,6 +23,14 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
+        killCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Load the current scene
     }
+
+    public void increaseKillCount(){
+        ++killCount;
+        killCounter.updateKillCounter(killCount);
+    }
+
+    
 }
