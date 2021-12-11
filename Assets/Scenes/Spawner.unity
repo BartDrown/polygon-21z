@@ -406,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 6295506323980736792, guid: 08fd6a6b5d6abac4d8c50fd9e45b8879, type: 3}
       propertyPath: enemies
       value: 
-      objectReference: {fileID: 612277066}
+      objectReference: {fileID: 8396229768473362769, guid: 1184774f49a37f7448ccc42a145aa8f8, type: 3}
     - target: {fileID: 6295506323980736793, guid: 08fd6a6b5d6abac4d8c50fd9e45b8879, type: 3}
       propertyPath: m_RootOrder
       value: 3

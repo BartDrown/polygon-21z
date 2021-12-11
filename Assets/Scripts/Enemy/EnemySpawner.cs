@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+        [SerializeField]
+    Vector2 bounds = new Vector2(10f, 15f);
     public Vector2 spawnValues;
     public GameObject enemies;
 

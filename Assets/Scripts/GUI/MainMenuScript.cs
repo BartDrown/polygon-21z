@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private void playGame() // public so that we can call it from button
     {
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentLevelIndex + 1); // Get to the next scene
+        SceneManager.LoadScene("demo"); // Get to the next scene
     }
 
     [SerializeField] private void quitGame()
