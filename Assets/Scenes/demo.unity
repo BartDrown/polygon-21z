@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8396229768473362782, guid: 1184774f49a37f7448ccc42a145aa8f8, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 303667080346964147, guid: 1f24cd75a90c18748a82a523a3fc9352, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1184774f49a37f7448ccc42a145aa8f8, type: 3}
 --- !u!4 &1059605349 stripped

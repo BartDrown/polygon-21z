@@ -131,6 +131,7 @@ MonoBehaviour:
   directionChangeTime: 2
   moveSpeed: 2
   bullet: {fileID: 4704827633829241443, guid: 0aefb2d1022bffa4ba6dd5f54ae29cab, type: 3}
+  deathEffect: {fileID: 303667080346964147, guid: 1f24cd75a90c18748a82a523a3fc9352, type: 3}
   fireRate: 2
   bounds: {x: 8.5, y: 4.5}
 --- !u!58 &612277067
