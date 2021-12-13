@@ -45,7 +45,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 57ae3c4178223a84a810091e71f1f15d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66eb55d70f4050441a0092cc0bec2e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,3 +147,4 @@ MonoBehaviour:
   speed: 5
   damage: 50
   rigidBody: {fileID: 5186284042600540031}
+  impactAnimation: {fileID: 303667080346964147, guid: 1f24cd75a90c18748a82a523a3fc9352, type: 3}

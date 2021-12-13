@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private Vector2 movementPerSecond;
 
     [SerializeField] GameObject bullet;
-    // [SerializeField] GameObject deathEffect; uncomment and add in unity once we have deathEffect
+    [SerializeField] GameObject deathEffect; // uncomment and add in unity once we have deathEffect
     [SerializeField] float fireRate;
     float nextFire;
     [SerializeField]
@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        // Debug.Log("Tried to fire enemy!");
         Instantiate(bullet, FirePoint.position, FirePoint.rotation);
         nextFire = Time.time + fireRate;
     }
@@ -82,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     void die()
     {
-        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         // uncomment and add in unity once we have deathEffect
         Destroy(gameObject);
     }

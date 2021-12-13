@@ -21,7 +21,8 @@ public class TimerScript : MonoBehaviour
         if (FindObjectOfType<GameManager>().gameHasEnded != true)
         {
             float t = Time.time - startTime;
-            timer.text = "You survived for: " + t.ToString();
+            float seconds = Mathf.Floor(t);
+            timer.text = "You survived for: " + seconds.ToString() + " seconds!";
         }
     }
 }

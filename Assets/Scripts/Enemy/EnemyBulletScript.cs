@@ -7,7 +7,9 @@ public class EnemyBulletScript : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 50;
     [SerializeField] private Rigidbody2D rigidBody;
-    // [SerializeField] private GameObject impactAnimation; uncomment and add in unity once we have impactAnimation
+    [SerializeField] private GameObject impactAnimation; // uncomment and add in unity once we have impactAnimation
+    
+    
     void Start()
     {
         rigidBody.velocity = transform.right * speed; // move rigid body to the LEFT with our speed
@@ -21,12 +23,13 @@ public class EnemyBulletScript : MonoBehaviour
         PlayerHealth playerHealth = hitInfo.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
+            Instantiate(impactAnimation, transform.position, transform.rotation);
             playerHealth.TakeDamage(damage);
+            Destroy(gameObject); // Destroy our bullet
         }
 
-        // Instantiate(impactEffect, transform.position, transform.rotation);
-        // uncomment and add in unity once we have impactAnimation
-        Destroy(gameObject); // Destroy our bullet
+
+
     }
 
 }

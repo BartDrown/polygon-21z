@@ -45,7 +45,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -148,3 +147,4 @@ MonoBehaviour:
   speed: 10
   damage: 25
   rigidBody: {fileID: 5186284042600540031}
+  impactAnimation: {fileID: 303667080346964147, guid: 1f24cd75a90c18748a82a523a3fc9352, type: 3}
