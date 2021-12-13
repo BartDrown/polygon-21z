@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        // Debug.Log("Tried to fire enemy!");
         Instantiate(bullet, FirePoint.position, FirePoint.rotation);
         nextFire = Time.time + fireRate;
     }
