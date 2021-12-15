@@ -157,10 +157,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -8661450713500079728}
-    m_Position: {x: 270, y: 240, z: 0}
+    m_Position: {x: 280, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -545081662895066946}
-    m_Position: {x: 330, y: -10, z: 0}
+    m_Position: {x: 330, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5988717660569162080}
     m_Position: {x: 500, y: 100, z: 0}
@@ -188,7 +188,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: MovementBehavior
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098d2ce7f3c1be74692e2f1eddd8b3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2336775460612882820, guid: 0f2a16c3f9e187f48bd8edd260d839dc, type: 3}
+  bullet: {fileID: 4704827633829241443, guid: 0aefb2d1022bffa4ba6dd5f54ae29cab, type: 3}
   fireRate: 2
   FirePoint: {fileID: 0}
 --- !u!1102 &5988717660569162080

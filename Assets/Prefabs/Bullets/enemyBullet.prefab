@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 66eb55d70f4050441a0092cc0bec2e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.15625, y: 0.09375}
@@ -147,4 +147,4 @@ MonoBehaviour:
   speed: 5
   damage: 50
   rigidBody: {fileID: 5186284042600540031}
-  impactAnimation: {fileID: 303667080346964147, guid: 1f24cd75a90c18748a82a523a3fc9352, type: 3}
+  impactAnimation: {fileID: 1473625048454486, guid: 284f05ab582ef494a9ab1dd8bc1e76ae, type: 3}

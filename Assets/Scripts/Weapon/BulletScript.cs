@@ -20,8 +20,9 @@ public class BulletScript : MonoBehaviour
     // This function will be called when our trigger hits something
     // hitInfo stores information on what we have hit
     {
+        Debug.Log("We hit something:");
         Debug.Log(hitInfo.name); // What did we hit
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        EnemySmart enemy = hitInfo.GetComponent<EnemySmart>();
         if (enemy != null)
         {
             Instantiate(impactAnimation, transform.position, transform.rotation);
