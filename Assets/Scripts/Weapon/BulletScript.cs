@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    [SerializeField] private float shootInterval = 1f;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 50;
     [SerializeField] private Rigidbody2D rigidBody;
@@ -35,4 +36,7 @@ public class BulletScript : MonoBehaviour
 
     }
 
+    public float getShootInterval(){
+        return this.shootInterval;
+    }
 }

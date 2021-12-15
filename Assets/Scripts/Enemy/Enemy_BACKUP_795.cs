@@ -87,8 +87,15 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         // uncomment and add in unity once we have deathEffect
+<<<<<<< HEAD
         FindObjectOfType<GameManager>().increaseKillCount();
         Destroy(gameObject);
+=======
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+>>>>>>> develop
     }
 
 }
