@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-        [SerializeField]
+    [SerializeField]
     Vector2 bounds = new Vector2(10f, 15f);
     public Vector2 spawnValues;
     public GameObject enemies;
 
-    public float spawnWait, spawnMostWait, spawnLeastWait;
+    public int maxDistance = 3;
+
+    public float spawnWait;
+    public float spawnMostWait;
+    public float spawnLeastWait;
     private int startWait = 2;
+
+    public float increment = 0.1f;
+
+    public Transform myTransform;
 
     public bool stop;
 
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        myTransform = transform;
         StartCoroutine(Spawner());
     }
 
@@ -32,7 +42,15 @@ public class EnemySpawner : MonoBehaviour
         while (!stop)
         {
             Vector2 spawnPosition = new Vector2(Random.Range(spawnValues.x, spawnValues.x + 5), Random.Range(spawnValues.y, spawnValues.y + 8));
-            Instantiate(enemies, spawnPosition, Quaternion.identity);
+            if (Vector3.Distance(spawnPosition, myTransform.position) > maxDistance)
+            {
+                Instantiate(enemies, spawnPosition, Quaternion.identity);
+            }
+            if (spawnMostWait == spawnLeastWait)
+            {
+                spawnLeastWait = 4;
+            }
+            spawnLeastWait -= increment;
             yield return new WaitForSeconds(spawnWait);
         }
 

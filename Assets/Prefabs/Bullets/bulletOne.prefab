@@ -148,3 +148,4 @@ MonoBehaviour:
   speed: 10
   damage: 25
   rigidBody: {fileID: 5186284042600540031}
+  impactAnimation: {fileID: 1473625048454486, guid: 284f05ab582ef494a9ab1dd8bc1e76ae, type: 3}
