@@ -12,9 +12,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+    private float distanceToPlayer = 12.0f;
+
 
     [SerializeField] GameObject bullet;
-    // [SerializeField] GameObject deathEffect; uncomment and add in unity once we have deathEffect
+    [SerializeField] GameObject deathEffect; // uncomment and add in unity once we have deathEffect
     [SerializeField] float fireRate;
     float nextFire;
     [SerializeField]
@@ -29,9 +31,9 @@ public class Enemy : MonoBehaviour
     {
 
         CheckIfTimeToFire();
-
+        float dist = Vector2.Distance(this.transform.position, new Vector2(0, 0));
         //if the changeTime was reached, calculate a new movement vector
-        if (Time.time - latestDirectionChangeTime > directionChangeTime)
+        if (Time.time - latestDirectionChangeTime > directionChangeTime || dist > distanceToPlayer)
         {
             latestDirectionChangeTime = Time.time;
             calcuateNewMovementVector();
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        // Debug.Log("Tried to fire enemy!");
         Instantiate(bullet, FirePoint.position, FirePoint.rotation);
         nextFire = Time.time + fireRate;
     }
@@ -74,7 +77,7 @@ public class Enemy : MonoBehaviour
     public void takeDamage(int damage) // public because accessible by BulletScript.cs OnTriggerEnter2D()
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             die();
         }
@@ -82,10 +85,17 @@ public class Enemy : MonoBehaviour
 
     void die()
     {
-        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         // uncomment and add in unity once we have deathEffect
+<<<<<<< HEAD
         FindObjectOfType<GameManager>().increaseKillCount();
         Destroy(gameObject);
+=======
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+>>>>>>> develop
     }
 
 }

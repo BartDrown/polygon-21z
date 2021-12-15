@@ -22,17 +22,17 @@ public class PlayerHealth : MonoBehaviour
         setPlayerHealthToValue(maxHealth);
     }
     
-    void DEBUG_removeHpOnSpace(int damage) // originally to check slider functionality
+    /*void DEBUG_removeHpOnSpace(int damage) // originally to check slider functionality
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(damage);
         }
-    }
+    }*/
 
     void Update()
     {
-        DEBUG_removeHpOnSpace(20);
+        //DEBUG_removeHpOnSpace(20);
        // Debug.Log(currentHealth);
     }
 

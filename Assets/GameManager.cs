@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool gameHasEnded = false;
-    float restartDelay = 5f; // How long do we wait before restarting scene, 1 second by default
+    // float restartDelay = 5f; // How long do we wait before restarting scene, 1 second by default
 
     private int killCount;
 
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("GAME OVER");
-            Invoke("Restart", restartDelay);
+            // Invoke("Restart", restartDelay);
         }
     }
 
