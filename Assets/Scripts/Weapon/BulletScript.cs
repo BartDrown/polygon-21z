@@ -16,7 +16,7 @@ public class BulletScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo) 
+    void OnTriggerEnter2D(Collider2D hitInfo)
     // This function will be called when our trigger hits something
     // hitInfo stores information on what we have hit
     {
@@ -25,14 +25,13 @@ public class BulletScript : MonoBehaviour
         EnemySmart enemy = hitInfo.GetComponent<EnemySmart>();
         if (enemy != null)
         {
-            Instantiate(impactAnimation, transform.position, transform.rotation);
+            Destroy(Instantiate(impactAnimation, transform.position, transform.rotation), 2f);
             enemy.takeDamage(damage);
             Destroy(gameObject); // Destroy our bullet
         }
-
-
         // uncomment and add in unity once we have impactAnimation
-
     }
+
+
 
 }
