@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnLeastWait;
     private int startWait = 2;
 
-    public float increment = 0.1f;
+    public float increment = 0.3f;
 
     public Transform myTransform;
 
@@ -46,11 +46,12 @@ public class EnemySpawner : MonoBehaviour
             {
                 Instantiate(enemies, spawnPosition, Quaternion.identity);
             }
-            if (spawnMostWait == spawnLeastWait)
+
+            if (spawnMostWait <= spawnLeastWait)
             {
-                spawnLeastWait = 4;
+                spawnLeastWait -= increment;
             }
-            spawnLeastWait -= increment;
+
             yield return new WaitForSeconds(spawnWait);
         }
 
